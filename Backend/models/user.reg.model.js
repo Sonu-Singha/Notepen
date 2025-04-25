@@ -21,9 +21,11 @@ const useRegisterSchema = mongoose.Schema({
         required: true
     },
     password: {
-        type: String
+        type: String,
+        required: true
     }
 })
 
+const user = mongoose.model("user", useRegisterSchema)
 
-export default useRegisterSchema;
+export default user;
