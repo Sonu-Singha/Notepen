@@ -7,6 +7,7 @@
 import express, { json } from "express";
 import { config } from "dotenv";
 config();
+import cookieParser from "cookie-parser";
 
 
 
@@ -26,6 +27,7 @@ dbConnection();
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 
 
@@ -38,6 +40,10 @@ app.use(express.json());
 
 // user register route
 import userRegisterRoute from "./routes/user.reg.route.js";
+
+// user login route
+
+import userLoingRoute from "./routes/user.login.route.js";
 
 
 
@@ -60,10 +66,13 @@ import userRegisterRoute from "./routes/user.reg.route.js";
 
 
 
-// post routes
+// Post routes
 
 // user register
 app.use("/api", userRegisterRoute);
+
+// user login
+app.use("/api", userLoingRoute);
 
 
 
