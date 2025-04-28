@@ -24,7 +24,7 @@ const useRegisterSchema = mongoose.Schema({
         type: String,
         required: true
     }
-})
+}, { timeStamps: true })
 
 const user = mongoose.model("user", useRegisterSchema)
 

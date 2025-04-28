@@ -34,10 +34,10 @@ async function isLogged(req, res, next) {
 
         // verifying jwt
         const jwtToken = jwt.verify(hasCookie, process.env.JWT_SECRET);
-
+        console.log("id: " + jwtToken.id)
 
         // getting the user(if logged in)
-        const user = await userRegisterModel.findById(jwtToken._id)
+        const user = await userRegisterModel.findById(jwtToken.id)
 
 
         // returing(if not logged in)

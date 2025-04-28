@@ -45,6 +45,9 @@ import userRegisterRoute from "./routes/user.reg.route.js";
 
 import userLoingRoute from "./routes/user.login.route.js";
 
+// reate-post route
+import createPost from "./routes/createPost.route.js";
+
 
 
 
@@ -73,6 +76,9 @@ app.use("/api", userRegisterRoute);
 
 // user login
 app.use("/api", userLoingRoute);
+
+// create-post
+app.use("/api", createPost);
 
 
 
