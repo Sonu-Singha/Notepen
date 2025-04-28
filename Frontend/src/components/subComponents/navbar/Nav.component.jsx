@@ -2,7 +2,7 @@
 
 // Importing CSS
 
-import "../navbar/Nav.component.css"
+import "./Nav.component.css"
 
 
 

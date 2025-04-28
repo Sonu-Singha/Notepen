@@ -1,0 +1,160 @@
+/* Code starts from Here */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* Main Footer Component */
+
+.Footer_Component {
+    background-color: black;
+    width: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+
+
+/* Info Section */
+
+.Info_Section {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.info_box1 {
+    /* border: 1px solid red; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    padding: 1rem;
+}
+
+.box1_text {
+    /* border: 1px solid green; */
+    color: rgba(220, 220, 220, 0.603);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.box1_info {
+    /* border: 1px solid yellow; */
+    color: rgba(220, 220, 220, 0.822);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: .85rem;
+}
+
+
+/* BOX 2 */
+.info_box2 {
+    /* border: 1px solid red; */
+    width: 40%;
+    gap: .4rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.box2_text {
+    /* border: 1px solid red; */
+    color: rgba(220, 220, 220, 0.603);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.box2_profiles {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.twitter {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    gap: .42rem;
+}
+
+.twitter_text{
+    color: rgb(220, 220, 220);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: .85rem;
+}
+
+.twitter_text:hover{
+    cursor: pointer;
+    color: rgba(220, 220, 220, 0.938);
+}
+
+.twitter_icon {
+    /* border: 1px solid red; */
+    height: 1.7rem;
+    filter: invert(.8);
+}
+
+.email {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.email_icon {
+    /* border: 1px solid red; */
+    height: 2rem;
+    filter: invert(.8);
+}
+
+.email_text{
+    color: rgb(220, 220, 220);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: .85rem;
+}
+
+.email_text:hover{
+    cursor: pointer;
+    color: rgba(220, 220, 220, 0.938);
+}
+
+
+
+
+
+
+
+/* Copyright Section */
+
+.Copyright_Section {
+    /* border: 1px solid red; */
+    color: rgb(143, 143, 143);
+    display: flex;
+    justify-content: center;
+    padding: .7rem;
+}
+
+.Copyright_Section_Text {
+    /* border: 1px solid rgb(204, 255, 0); */
+    letter-spacing: 2px;
+    font-size: .9rem;
+}

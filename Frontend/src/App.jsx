@@ -5,8 +5,9 @@ import './App.css'
 
 // Importing Indivisual Components
 
-// Navbar
-import Navbar from "../src/components/navbar/Nav.component.jsx";
+// Createpage
+import Createpage from './components/pages/Createpage.component'
+
 
 
 
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Createpage />
     </>
   )
 }
