@@ -13,12 +13,12 @@ import "./Footer.component.css"
 
 function Footer() {
     return (
-        <>
+        <div className="Footer_Wrapper">
             <footer className="Footer_Component">
                 <InfoSection />
                 <CopyrightSection />
             </footer>
-        </>
+        </div>
     )
 }
 
@@ -58,8 +58,8 @@ function InfoSection() {
                         <img className="twitter_icon" src="src\assets\icons\twitter.icon.png" alt="" />
                     </span>
                     <span className="email">
-                    <span className="email_text">Email</span>
-                    <img className="email_icon" src="src\assets\icons\email.icon.png" alt="" />
+                        <span className="email_text">Email</span>
+                        <img className="email_icon" src="src\assets\icons\email.icon.png" alt="" />
                     </span>
                 </div>
             </div>

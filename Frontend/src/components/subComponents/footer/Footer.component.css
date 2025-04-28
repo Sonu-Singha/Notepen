@@ -7,17 +7,33 @@
 
 
 
+/* Footer Wrapper */
+
+.Footer_Wrapper {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+}
+
+
+
 
 /* Main Footer Component */
 
 .Footer_Component {
+    /* border: 1px solid yellow; */
+    width: 100%;
+    max-width: 1250px;
     background-color: black;
     width: 100%;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 
-    position: absolute;
-    bottom: 0;
+
 }
 
 
@@ -94,14 +110,14 @@
     gap: .42rem;
 }
 
-.twitter_text{
+.twitter_text {
     color: rgb(220, 220, 220);
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     font-size: .85rem;
 }
 
-.twitter_text:hover{
+.twitter_text:hover {
     cursor: pointer;
     color: rgba(220, 220, 220, 0.938);
 }
@@ -125,14 +141,14 @@
     filter: invert(.8);
 }
 
-.email_text{
+.email_text {
     color: rgb(220, 220, 220);
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     font-size: .85rem;
 }
 
-.email_text:hover{
+.email_text:hover {
     cursor: pointer;
     color: rgba(220, 220, 220, 0.938);
 }
