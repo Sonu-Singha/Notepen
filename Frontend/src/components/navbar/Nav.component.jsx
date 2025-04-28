@@ -13,9 +13,11 @@ import "../navbar/Nav.component.css"
 // Main component
 function Navbar() {
     return (
-        <div className="Main_Navbar_Component">
-            <ThemeToggle />
-            <ExtraNavButtons />
+        <div className="Navbar_Wrapper">
+            <nav className="Main_Navbar_Component">
+                <ThemeToggle />
+                <ExtraNavButtons />
+            </nav>
         </div>
     )
 }
@@ -25,7 +27,7 @@ function Navbar() {
 function ThemeToggle() {
     return (
         <div className="Main_Theme_Toggle">
-            <div className="theme_logo" alt="theme" />
+            <div className="theme_logo" />
             <span className="theme_text">Theme</span>
 
         </div>
@@ -50,7 +52,7 @@ function ViewButtonComponent() {
     return (
         <div className="View_Button_Component">
             <span className="View_Text">
-            My Posts
+                My Posts
             </span>
         </div>
     )
@@ -61,7 +63,6 @@ function ViewButtonComponent() {
 function CreateButtonComponent() {
     return (
         <div className="Create_Button_Component">
-            {/* <button className="create_btn" type="button">create</button> */}
             <img className="create_icon" src="/src/assets/icons/create.icon.svg" alt="create icon" />
         </div>
     )
@@ -71,11 +72,10 @@ function CreateButtonComponent() {
 // Logout Component
 function LogoutComponent() {
     return (
-        // <div className="Logout_Component">logout</div>
         <div className="Logout_Component">
             <img className="logout_button" src="/src/assets/icons/logout.icon.svg" alt="logout" />
         </div>
-        
+
     )
 }
 

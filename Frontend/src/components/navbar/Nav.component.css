@@ -7,11 +7,23 @@
 }
 
 
-/* Main component ----------------------------------------1*/
-.Main_Navbar_Component {
+
+/* Navbar Wrapper */
+
+.Navbar_Wrapper{
     /* border: 1px solid red; */
     background-color: rgb(21, 21, 21);
+    display: flex;
+    justify-content: center;
     width: 100%;
+}
+
+/* Main component ----------------------------------------1*/
+.Main_Navbar_Component {
+    /* border: 1px solid yellow; */
+    background-color: rgb(21, 21, 21);
+    width: 100%;
+    max-width: 1250px;
     height: 3.5rem;
     color: white;
     display: flex;
@@ -34,7 +46,6 @@
     /* border: 1px solid yellow; */
     width: 20%;
     display: flex;
-    /* justify-content: center; */
     gap: .7rem;
     align-items: center;
 }
@@ -60,7 +71,6 @@
     /* border: 1px solid red; */
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 0.719);
-    /* font-weight: bold; */
     letter-spacing: 2px;
 
 }
