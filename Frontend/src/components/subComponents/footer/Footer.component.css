@@ -11,7 +11,7 @@
 
 .Footer_Wrapper {
     /* border: 1px solid red; */
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: flex;
     justify-content: center;

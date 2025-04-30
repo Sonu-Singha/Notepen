@@ -6,14 +6,12 @@ import './App.css'
 // Importing Indivisual Components
 
 // Createpage
-import Createpage from './components/pages/Createpage.component'
+import Createpage from './components/pages/createpage/Createpage.component'
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Createpage />
