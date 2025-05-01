@@ -11,15 +11,16 @@
 
 .Hero_Component_Wrapper {
     /* border: 2px solid green; */
-    background-color:rgb(83, 95, 119);
+    background-color: rgb(83, 95, 119);
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
 
-/* Banner Container */
+/* Banner Container ------------------------------------------1*/
 
 .Banner_Container {
     /* border: 2px solid red; */
@@ -34,13 +35,9 @@
 
 
 
-
-
-
-
 /* Banner Display Container */
 
-.Banner_Display_Container{
+.Banner_Display_Container {
     /* border: 1px solid red; */
     margin: 1rem 0;
     height: 38vh;
@@ -51,8 +48,9 @@
     gap: .5rem;
 }
 
-.Banner_Img{
+.Banner_Img {
     border: 2px solid black;
+    margin-left: 2.5rem;
     border-radius: 10px;
     height: 100%;
     width: 100%;
@@ -61,12 +59,12 @@
     object-fit: cover;
 }
 
-.remove_banner{
+.remove_banner {
     border: 1px solid red;
     height: 80%;
 }
 
-.remove{
+.remove {
     border: 2px solid black;
     height: 20px;
     width: 25px;
@@ -82,7 +80,7 @@
     align-items: center;
 }
 
-.remove:hover{
+.remove:hover {
     cursor: pointer;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 0, 0);
@@ -92,12 +90,10 @@
 
 
 
-
-
 /* Banner Input */
 
 #Banner_Input {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: none;
 }
 
@@ -115,7 +111,7 @@
 }
 
 .Banner_Input_Label:hover {
-    background-color:rgb(65, 78, 104);
+    background-color: rgb(65, 78, 104);
 }
 
 .Banner_Input_Text {
@@ -135,8 +131,55 @@
     background-color: rgb(168, 168, 168);
 }
 
-.Banner_Ins{
+.Banner_Ins {
     color: rgb(78, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8rem;
+}
+
+
+
+
+
+
+
+
+
+/* Title Container ------------------------------------------2*/
+
+.Title_Container {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 19vh;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.title_input_container {
+    /* border: 2px solid blue; */
+    height: 80%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Title_Input{
+    width: 80%;
+    height: 40%;
+    background-color: rgb(166, 165, 165);
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 0 5px;
+    padding-left: 1rem;
+    outline: none;
+    font-size: .8rem;
+}
+
+.Title_Input::placeholder{
+    color: black;
+    font-size: .8rem;
+    letter-spacing: 2px;
 }

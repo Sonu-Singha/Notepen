@@ -10,9 +10,12 @@ import React, { useState } from 'react';
 
 function HeroComponent() {
     return (
-        <div className="Hero_Component_Wrapper">
-            <BannerComponent />
-        </div>
+        <>
+            <div className="Hero_Component_Wrapper">
+                <BannerComponent />
+                <TitleComponent />
+            </div>
+        </>
     );
 }
 
@@ -50,13 +53,6 @@ function BannerComponent() {
         </>
     )
 
-
-
-
-
-
-
-
     // BannerHandler function
 
     function bannerHanlder(event) {
@@ -67,6 +63,24 @@ function BannerComponent() {
             setBanner(URL.createObjectURL(File));
         }
     }
+}
+
+
+
+
+
+
+// Sub component(Banner)-------------------------------------------2
+
+function TitleComponent() {
+
+    return (
+        <div className="Title_Container">
+            <div className="title_input_container">
+            <input className="Title_Input" type="text" placeholder="Enter your post TITLE// make it catchy & shorter" />
+            </div>
+        </div>
+    )
 }
 
 

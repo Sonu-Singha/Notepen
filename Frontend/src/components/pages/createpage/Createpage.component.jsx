@@ -6,7 +6,7 @@ import Navbar from "../../subComponents/navbar/Nav.component.jsx";
 import Footer from '../../subComponents/footer/Footer.component.jsx';
 
 // Createpage
-import HeroComponent from "./Hero.component.jsx";
+import HeroComponent from "./hero.component.jsx";
 
 
 
