@@ -3,6 +3,8 @@
 // Importing CSS
 import "./Hero.component.css"
 import React, { useState } from 'react';
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
 
 // Creating Components
 
@@ -14,6 +16,7 @@ function HeroComponent() {
             <div className="Hero_Component_Wrapper">
                 <BannerComponent />
                 <TitleComponent />
+                <ContentComponent />
             </div>
         </>
     );
@@ -70,14 +73,52 @@ function BannerComponent() {
 
 
 
-// Sub component(Banner)-------------------------------------------2
+// Sub component(Title)-------------------------------------------2
 
 function TitleComponent() {
 
     return (
         <div className="Title_Container">
             <div className="title_input_container">
-            <input className="Title_Input" type="text" placeholder="Enter your post TITLE// make it catchy & shorter" />
+                <input className="Title_Input" type="text" placeholder="Enter your post TITLE// make it catchy & shorter" />
+            </div>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+// Sub component(Content)-------------------------------------------3
+
+function ContentComponent() {
+    const [content, setContent] = useState('');
+    console.log(content)
+
+    // Defining the custom toolbar options
+    const modules = {
+        toolbar: [
+            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'align': [] }],
+            ['link'],
+            ['blockquote', 'code-block'],
+            [{ 'color': [] }, { 'background': [] }],
+            [{ 'script': 'sub' }, { 'script': 'super' }]
+        ],
+    };
+
+
+    return (
+        <div className="Content_Container">
+            <ReactQuill className="QuillEditor" theme="snow" value={content} modules={modules} onChange={setContent} />
+            <div className="post_content_cont">
+                <button className="draft_post">Make Draft</button>
+                <button className="publish_post">Publish</button>
             </div>
         </div>
     )
