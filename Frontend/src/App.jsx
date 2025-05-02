@@ -11,6 +11,9 @@ import Createpage from './components/pages/createpage/Createpage.component';
 // Loginpage
 import Loginpage from "./components/pages/loginpage/LoginPage.jsx";
 
+// Registerpage
+import Registerpage from './components/pages/registerpage/RegisterPage.jsx';
+
 
 
 
@@ -18,7 +21,8 @@ function App() {
   return (
     <>
       {/* <Createpage /> */}
-      <Loginpage />
+      {/* <Loginpage /> */}
+      <Registerpage />
     </>
   )
 }
