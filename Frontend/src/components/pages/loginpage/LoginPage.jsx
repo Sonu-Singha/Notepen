@@ -19,7 +19,7 @@ function LoginPage() {
 
     return (
         <div className="Login_Main_Component">
-            <LoginComponent email={email} password={password} />
+            <LoginComponent email={email} setEmail={(event) => setEmail(event.target.value)} password={password} setPassword={(event) => setPassword(event.target.value)} />
         </div>
     )
 }
@@ -28,7 +28,7 @@ function LoginPage() {
 
 // Sub component(Login)----------------------------------------2
 
-function LoginComponent({ email, password }) {
+function LoginComponent({ email, setEmail, password, setPassword }) {
     return (
         <div className="Main_Login_Wrapper">
             <div className="Login_Container">
@@ -38,9 +38,9 @@ function LoginComponent({ email, password }) {
                 <form action="/login" method="post" className="Login_Inputs">
                     <div className="input_container">
                         <span className="email_textt">Email</span>
-                        <input type="email" value={email} placeholder="Enter your email address" className="email_input" required="true" />
+                        <input type="email" onChange={setEmail} value={email} placeholder="Enter your email address" className="email_input" required="true" />
                         <span className="password_text">Password</span>
-                        <input type="text" value={password} placeholder="Enter your password" className="password_input" required="true" />
+                        <input type="text" onChange={setPassword} value={password} placeholder="Enter your password" className="password_input" required="true" />
                     </div>
                     <div className="submit_container">
                         <button className="login_submit">Login</button>
