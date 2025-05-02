@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
@@ -19,11 +20,16 @@ import Registerpage from './components/pages/registerpage/RegisterPage.jsx';
 
 function App() {
   return (
-    <>
-      {/* <Createpage /> */}
-      {/* <Loginpage /> */}
-      <Registerpage />
-    </>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Loginpage />} />
+        <Route path='/register' element={<Registerpage />} />
+        <Route path='/create' element={<Createpage />} />
+        <Route path='/login' element={<Loginpage />} />
+      </Routes>
+    </BrowserRouter >
+
   )
 }
 
