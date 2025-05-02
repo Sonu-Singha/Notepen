@@ -6,7 +6,10 @@ import './App.css'
 // Importing Indivisual Components
 
 // Createpage
-import Createpage from './components/pages/createpage/Createpage.component'
+import Createpage from './components/pages/createpage/Createpage.component';
+
+// Loginpage
+import Loginpage from "./components/pages/loginpage/LoginPage.jsx";
 
 
 
@@ -14,7 +17,8 @@ import Createpage from './components/pages/createpage/Createpage.component'
 function App() {
   return (
     <>
-      <Createpage />
+      {/* <Createpage /> */}
+      <Loginpage />
     </>
   )
 }
