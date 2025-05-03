@@ -8,6 +8,9 @@ import axios from "axios";
 import "../registerpage/RegisterPage.css"
 
 
+// Importin BackendULR
+
+const BackendURL = import.meta.env.VITE_BACKEND_URL;
 
 
 // Creating Component
@@ -23,12 +26,12 @@ function RegisterPage() {
         event.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/api/register", { username, email, password })
+            const res = await axios.post(`${BackendURL}api/register`, { username, email, password }, { withCredentials: true })
             alert(res.data)
             console.log(res.data)
 
         } catch (error) {
-            alert("Failed to pass datas: ", error);
+            alert("Failed to pass datas: " + error);
 
         }
     }
@@ -87,7 +90,7 @@ function RegisterComponent({ username, setUsername, email, setEmail, password, s
 
                         <span className="reg_password_text">Password</span>
                         <input
-                            type="text"
+                            type="password"
                             onChange={setPassword}
                             value={password}
                             placeholder="Choose your password"

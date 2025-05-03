@@ -41,7 +41,7 @@ async function userRegisterController(req, res) {
             id: newUser._id,
             email: newUser.email
         }, process.env.JWT_SECRET);
-        console.log(jwtToken)
+        // console.log(jwtToken)
 
 
         // setting jwtToken to cookies
