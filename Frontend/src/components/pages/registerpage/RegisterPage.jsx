@@ -32,7 +32,7 @@ function RegisterPage() {
 
         } catch (error) {
             alert("Failed to pass datas: " + error);
-
+            console.log("Failed to pass datas: " + error);
         }
     }
 
