@@ -1,9 +1,10 @@
 // Code starts from Here
 
 
-// Importing postController
+// Importing postController & multer middleware, express
 
 import postController from "../controllers/post.controller.js";
+import upload from "../middlewares/multer.middleware.js";
 
 import express from "express";
 const router = express.Router();
@@ -18,7 +19,7 @@ import isLogged from "../middlewares/isLogged.middleware.js";
 
 // post requests
 
-router.post("/create-post", isLogged, postController);
+router.post("/create-post", isLogged, upload.single('banner'), postController);
 
 
 

@@ -1,23 +1,74 @@
 // Code starts from Here
 
-// Importing CSS
+// Importing CSS & other necessary packages
 import "./Hero.component.css"
 import React, { useState } from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import axios from "axios";
+
+
+// Importing Backend URL
+const BackendURL = import.meta.env.VITE_BACKEND_URL;
+
 
 // Creating Components
 
 // Main component(HEAD)-------------------------------------------1
 
 function HeroComponent() {
+
+    // Banner
+    const [banner, setBanner] = useState(null);
+
+    // Title
+    const [title, setTitle] = useState("");
+    // console.log(title)
+
+    // Content
+    const [content, setContent] = useState('');
+    console.log(content)
+
+
+    // Creating FormData
+
+    const formdata = new FormData();
+    formdata.append("post_title", title);
+    formdata.append("content", content);
+
+    if (banner) {
+        formdata.append("banner", banner)
+    }
+
+
+    const submitHandler = async (event) => {
+        event.preventDefault();
+
+        try {
+            const res = await axios.post(`${BackendURL}api/create-post`, formdata,
+                { withCredentials: true })
+
+            alert(res.data)
+            console.log(res.data)
+        }
+        catch (error) {
+            alert("got an error in titleHandler: " + error);
+            console.log("got an error in titleHandler: " + error);
+
+        }
+
+    }
+
+
     return (
         <>
-            <div className="Hero_Component_Wrapper">
-                <BannerComponent />
-                <TitleComponent />
-                <ContentComponent />
-            </div>
+            <form onSubmit={submitHandler} encType="multipart/form-data" className="Hero_Component_Wrapper">
+
+                <BannerComponent banner={banner} setBanner={setBanner} />
+                <TitleComponent title={title} setTitle={setTitle} />
+                <ContentComponent content={content} setContent={setContent} />
+                <SubmitComponent />
+            </form>
         </>
     );
 }
@@ -27,17 +78,31 @@ function HeroComponent() {
 
 // Sub component(Banner)-------------------------------------------2
 
-function BannerComponent() {
-    const [Banner, setBanner] = useState(null);
+function BannerComponent({ banner, setBanner }) {
+
+    const [bannerPreview, setBannerPreview] = useState(null);
+
+    // BannerHandler function
+
+    function bannerHanlder(event) {
+        const File = event.target.files[0];
+
+        //setting image url to Banner if there is file!
+        if (File) {
+            setBanner(File);//saving the file
+            setBannerPreview(URL.createObjectURL(File));//for preview the banner
+        }
+    }
+
 
     return (
         <>
             <div className="Banner_Container">
-                {Banner ? (
+                {bannerPreview ? (
                     <>
                         <div className="Banner_Display_Container">
-                            <img className="Banner_Img" src={Banner} alt="banner" />
-                            <span className="remove" onClick={() => { setBanner(null) }}>
+                            <img className="Banner_Img" src={bannerPreview} alt="banner" />
+                            <span className="remove" onClick={() => { setBannerPreview(null); setBanner(null); }}>
                                 <span>X</span>
                             </span>
                         </div>
@@ -47,8 +112,7 @@ function BannerComponent() {
                         <span className="Banner_Input_Text">Add Banner Image</span>
                         <span className="Banner_Ins">use wider image for banner</span>
                     </label>
-                )
-                }
+                )}
 
                 {/* hide the main input */}
                 <input id="Banner_Input" type="file" accept="image/*" onChange={bannerHanlder} />
@@ -56,16 +120,6 @@ function BannerComponent() {
         </>
     )
 
-    // BannerHandler function
-
-    function bannerHanlder(event) {
-        const File = event.target.files[0];
-
-        //setting image url to Banner if there is file!
-        if (File) {
-            setBanner(URL.createObjectURL(File));
-        }
-    }
 }
 
 
@@ -75,12 +129,19 @@ function BannerComponent() {
 
 // Sub component(Title)-------------------------------------------2
 
-function TitleComponent() {
+function TitleComponent({ title, setTitle }) {
 
     return (
         <div className="Title_Container">
             <div className="title_input_container">
-                <input className="Title_Input" type="text" placeholder="Enter your post TITLE// make it catchy & shorter" />
+                <input
+                    className="Title_Input"
+                    value={title}
+                    onChange={(event) => { setTitle(event.target.value) }}
+                    type="text"
+                    placeholder="Enter your post TITLE// make it catchy & shorter"
+                    required
+                />
             </div>
         </div>
     )
@@ -94,9 +155,7 @@ function TitleComponent() {
 
 // Sub component(Content)-------------------------------------------3
 
-function ContentComponent() {
-    const [content, setContent] = useState('');
-    console.log(content)
+function ContentComponent({ content, setContent }) {
 
     // Defining the custom toolbar options
     const modules = {
@@ -116,10 +175,20 @@ function ContentComponent() {
     return (
         <div className="Content_Container">
             <ReactQuill className="QuillEditor" theme="snow" value={content} modules={modules} onChange={setContent} />
-            <div className="post_content_cont">
-                <button className="draft_post">Make Draft</button>
-                <button className="publish_post">Publish</button>
-            </div>
+        </div>
+    )
+}
+
+
+
+
+// Sub component(Submit)-------------------------------------------4
+
+function SubmitComponent() {
+    return (
+        <div className="post_content_cont">
+            <button className="draft_post">Make Draft</button>
+            <button type="submit" className="publish_post">Publish</button>
         </div>
     )
 }

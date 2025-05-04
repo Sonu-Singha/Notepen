@@ -14,11 +14,18 @@ import user from "../models/user.reg.model.js";
 
 async function postController(req, res) {
     const { banner, post_title, content } = req.body;
-    // taking banner hard coded for now
+
+    const bannerFile = req.file;
+
+    //getting the banner filename
+    const bannerURL = bannerFile ? bannerFile.filename : null;
+
 
     try {
         const newPost = await postModel.create({
-            banner, post_title, content,
+            banner: bannerURL,
+            post_title,
+            content,
             author_username: req.user.username,
             author_id: req.user._id
         })
