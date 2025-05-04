@@ -28,7 +28,7 @@ async function userLoginController(req, res) {
 
 
         // verying input & hashed password
-        const hashedPass = bcrypt.compare(password, HasEmail.password)
+        const hashedPass = await bcrypt.compare(password, HasEmail.password)
         if (!hashedPass) {
             return res.status(400).send("email or password is incorrect!! try again")
         }
