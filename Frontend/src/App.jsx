@@ -15,6 +15,10 @@ import Loginpage from "./components/pages/loginpage/LoginPage.jsx";
 // Registerpage
 import Registerpage from './components/pages/registerpage/RegisterPage.jsx';
 
+// Viewpage
+import Viewpage from './components/pages/viewpage/Viewpage.jsx';
+
+
 
 
 
@@ -27,6 +31,7 @@ function App() {
         <Route path='/register' element={<Registerpage />} />
         <Route path='/create' element={<Createpage />} />
         <Route path='/login' element={<Loginpage />} />
+        <Route path='/view' element={<Viewpage />} />
       </Routes>
     </BrowserRouter >
 
