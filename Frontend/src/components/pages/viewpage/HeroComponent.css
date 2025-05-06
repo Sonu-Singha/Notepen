@@ -16,7 +16,8 @@
     background-color: rgb(32, 32, 32);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: space-around;
+    gap: 1rem;
 }
 
 
@@ -62,10 +63,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: .7rem;
 }
 
 .Title2_Container {
-    /* border: 1px solid yellow; */
+    border: 3px solid rgba(255, 255, 255, 0.237);
+    border-radius: 12px;
     width: 89%;
     height: 100%;
     max-width: 1250px;
@@ -73,7 +76,7 @@
     flex-direction: column;
     align-items: start;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
 }
 
 .Title2_Text {
