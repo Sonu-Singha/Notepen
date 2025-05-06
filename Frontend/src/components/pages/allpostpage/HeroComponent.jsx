@@ -1,9 +1,19 @@
 // Code starts from Here
 
 
-// Importing CSS
+// Importing CSS & other necessary packages
+import { useEffect, useState } from "react";
 import "./HeroComponent.css";
+import axios from "axios";
+import { compareAsc, format } from "date-fns";
 
+
+
+
+
+// Backend URL
+const BackendURL = import.meta.env.VITE_BACKEND_URL;
+const BackendImgPath = "http://localhost:3000/public/uploads/";
 
 
 
@@ -12,15 +22,33 @@ import "./HeroComponent.css";
 // Main Component(MAIN)------------------------------------------------1
 
 function HeroComponent() {
+
+    const [posts, setPosts] = useState(null);
+
+    useEffect(() => {
+        async function getAllPosts() {
+            try {
+                const res = await axios.get(`${BackendURL}api/all-posts`);
+                setPosts(res.data);
+                // console.log(posts)
+            } catch (error) {
+                console.log("got error while getting all posts in Frontend" + error);
+            }
+        }
+        getAllPosts();
+    }, [])
+
+
     return (
         <div className="APM_Con_Wrapper">
             <div className="cards_container">
-                <Postcard />
-                <Postcard />
-                <Postcard />
-                <Postcard />
-                <Postcard />
-                <Postcard />
+                {posts ? (
+                    posts.map((post, Key) => (
+                        <Postcard key={Key} data={post} />
+                    ))
+                ) : (
+                    "loading..."
+                )}
             </div>
         </div>
     )
@@ -31,11 +59,11 @@ function HeroComponent() {
 
 // Sub Component(Post Card Wrapper)------------------------------------------------2
 
-function Postcard() {
+function Postcard({ data }) {
     return (
         <div className="Card_Wrapper">
-            <Postbanner />
-            <Posttitle />
+            <Postbanner data={data} />
+            <Posttitle data={data} />
         </div>
     )
 }
@@ -45,15 +73,19 @@ function Postcard() {
 
 // Sub Component(Post Card Banner component)------------------------------------------------2
 
-function Postbanner() {
+function Postbanner({ data }) {
     return (
+
         <div className="PostBanner_Wrapper">
-            <img 
-                src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg" 
-                alt="post banner" 
+            <img
+                src={`${BackendImgPath}${data.banner}`}
+                alt="post banner"
                 className="post_banner_img"
             />
         </div>
+
+
+
     )
 }
 
@@ -62,13 +94,16 @@ function Postbanner() {
 
 // Sub Component(Post Card Title + date, author component)------------------------------------------------2
 
-function Posttitle() {
+function Posttitle({ data }) {
+    const date = new Date(data.createdAt);
+    const createdAt = format(date, "d MMMM yyyy")
+
     return (
         <div className="PostTitle_Wrapper">
-            <span className="post_title">This is a very long title that will be truncated with dots...</span>
+            <span className="post_title">{data.post_title}</span>
             <div className="post_info">
-                <span className="post_date">12 March, 2024</span>
-                <span className="post_author">Created By: John Doe</span>
+                <span className="post_date">{createdAt}</span>
+                <span className="post_author">Author: {data.author_username}</span>
             </div>
         </div>
     )
