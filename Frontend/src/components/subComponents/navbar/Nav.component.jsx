@@ -2,6 +2,7 @@
 
 // Importing CSS
 
+import { useNavigate } from "react-router-dom"
 import "./Nav.component.css"
 
 
@@ -49,23 +50,35 @@ function ExtraNavButtons() {
 
 // View Component
 function ViewButtonComponent() {
+    const Navigate = useNavigate();
+
     return (
         <div className="View_Button_Component">
-            <span className="View_Text">
+            <span className="View_Text" onClick={clickHandler}>
                 My Posts
             </span>
         </div>
     )
+
+    function clickHandler() {
+        Navigate("/myposts")
+    }
 }
 
 
 // Create Button
 function CreateButtonComponent() {
+    const Navigate = useNavigate();
+
     return (
         <div className="Create_Button_Component">
-            <img className="create_icon" src="/src/assets/icons/create.icon.svg" alt="create icon" />
+            <img className="create_icon" src="/src/assets/icons/create.icon.svg" alt="create icon" onClick={clickHandler} />
         </div>
     )
+
+    function clickHandler() {
+        Navigate("/create")
+    }
 }
 
 
