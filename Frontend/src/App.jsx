@@ -18,6 +18,8 @@ import Registerpage from './components/pages/registerpage/RegisterPage.jsx';
 // Viewpage
 import Viewpage from './components/pages/viewpage/Viewpage.jsx';
 
+// Allpostpgae
+import Allpostpgae from './components/pages/allpostpage/Allpostpgae.jsx';
 
 
 
@@ -32,6 +34,7 @@ function App() {
         <Route path='/create' element={<Createpage />} />
         <Route path='/login' element={<Loginpage />} />
         <Route path='/view' element={<Viewpage />} />
+        <Route path='/myposts' element={<Allpostpgae />} />
       </Routes>
     </BrowserRouter >
 
