@@ -56,6 +56,9 @@ import createPost from "./routes/createPost.route.js";
 // viewpost route
 import viewPost from "./routes/view.route.js";
 
+// all posts route
+import allPosts from "./routes/allpost.route.js";
+
 
 
 
@@ -73,6 +76,9 @@ import viewPost from "./routes/view.route.js";
 
 // view post
 app.use("/api", viewPost);
+
+// all posts
+app.use("/api", allPosts);
 
 
 
