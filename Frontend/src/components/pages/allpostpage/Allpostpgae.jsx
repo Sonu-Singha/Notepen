@@ -18,9 +18,9 @@ import HeroComponent from "../allpostpage/HeroComponent.jsx";
 function Allpostpgae() {
     return (
         <>
-            {/* <Navbar /> */}
+            <Navbar />
             <HeroComponent />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

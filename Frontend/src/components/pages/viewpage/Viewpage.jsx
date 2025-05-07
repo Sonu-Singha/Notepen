@@ -17,9 +17,9 @@ import HeroComponent from "./HeroComponent.jsx";
 function Viewpage() {
     return (
         <>
-            {/* <Navbar /> */}
+            <Navbar />
             <HeroComponent />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

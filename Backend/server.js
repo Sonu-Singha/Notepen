@@ -59,6 +59,9 @@ import viewPost from "./routes/view.route.js";
 // all posts route
 import allPosts from "./routes/allpost.route.js";
 
+// auth check-point
+import authCheck from "./routes/auth.checkpoing.route.js";
+
 
 
 
@@ -79,6 +82,9 @@ app.use("/api", viewPost);
 
 // all posts
 app.use("/api", allPosts);
+
+// auth check-point
+app.use("/api", authCheck);
 
 
 

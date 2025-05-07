@@ -34,17 +34,13 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        {/* without outline */}
         <Route path='/' element={<Loginpage />} />
         <Route path='/login' element={<Loginpage />} />
         <Route path='/register' element={<Registerpage />} />
+        <Route path='/create' element={<Createpage />} />
+        <Route path='/view/:id' element={<Viewpage />} />
+        <Route path='/myposts' element={<Allpostpgae />} />
 
-        {/* with outline */}
-        <Route element={<Outline />}>
-          <Route path='/create' element={<Createpage />} />
-          <Route path='/view/:id' element={<Viewpage />} />
-          <Route path='/myposts' element={<Allpostpgae />} />
-        </Route>
       </Routes>
     </BrowserRouter >
 
