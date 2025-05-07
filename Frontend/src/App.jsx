@@ -24,6 +24,9 @@ import Allpostpgae from './components/pages/allpostpage/Allpostpgae.jsx';
 // Outline
 import Outline from './components/subComponents/outline/Outiline.jsx';
 
+// auth check-point
+import Authcheckpoint from "./components/subComponents/auth.checkpoint/auth.checkpoint.jsx";
+
 
 
 
@@ -37,9 +40,13 @@ function App() {
         <Route path='/' element={<Loginpage />} />
         <Route path='/login' element={<Loginpage />} />
         <Route path='/register' element={<Registerpage />} />
-        <Route path='/create' element={<Createpage />} />
+
+
         <Route path='/view/:id' element={<Viewpage />} />
-        <Route path='/myposts' element={<Allpostpgae />} />
+
+        {/* routes with auth checking */}
+        <Route path='/create' element={<Authcheckpoint> <Createpage /> </Authcheckpoint>} />
+        <Route path='/myposts' element={<Authcheckpoint> <Allpostpgae /> </Authcheckpoint>} />
 
       </Routes>
     </BrowserRouter >
