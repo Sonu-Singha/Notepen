@@ -28,8 +28,12 @@
     max-width: 1250px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-auto-rows: 300px; */
     gap: 1.5rem;
     padding: 1rem;
+    grid-auto-flow: dense; 
+    align-items: start;
+    
 }
 
 
@@ -42,7 +46,8 @@
     border-radius: 7px;
     /* border: 1.5px solid rgba(83, 83, 83, 0.895); */
     overflow: hidden;
-    height: 300px;
+    min-height: 100px;
+    max-height: 300px;
     display: flex;
     flex-direction: column;
     transition: ease-in .2s;

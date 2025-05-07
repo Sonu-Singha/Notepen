@@ -62,7 +62,7 @@ function HeroComponent() {
 function Postcard({ data }) {
     return (
         <div className="Card_Wrapper">
-            <Postbanner data={data} />
+            {data.banner ? (<Postbanner data={data} />) : (null)}
             <Posttitle data={data} />
         </div>
     )
