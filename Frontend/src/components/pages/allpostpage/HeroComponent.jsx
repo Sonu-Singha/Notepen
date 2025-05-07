@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import "./HeroComponent.css";
 import axios from "axios";
 import { compareAsc, format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -60,8 +61,15 @@ function HeroComponent() {
 // Sub Component(Post Card Wrapper)------------------------------------------------2
 
 function Postcard({ data }) {
+
+    const navigate = useNavigate();
+
+    function handleClick() {
+        navigate(`/view/${data._id}`);
+    }
+
     return (
-        <div className="Card_Wrapper">
+        <div className="Card_Wrapper" onClick={handleClick} >
             {data.banner ? (<Postbanner data={data} />) : (null)}
             <Posttitle data={data} />
         </div>

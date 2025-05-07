@@ -7,7 +7,7 @@ import 'react-quill/dist/quill.snow.css';
 import "quill/dist/quill.snow.css"
 import axios, { formToJSON } from "axios";
 import { format } from "date-fns";
-
+import { useParams } from "react-router-dom";
 
 
 // Backend URL
@@ -21,7 +21,7 @@ const BackendImgPath = "http://localhost:3000/public/uploads/"
 
 function HeroComponent() {
 
-    const [postID, setPostID] = useState("68199a4c2b7c3bb1ac31014d");//using hard-coded for now!!
+    const [postID, setPostID] = useState(useParams().id);
     const [currentPost, setCurrentPost] = useState(null);
     // console.log(currentPost?.content);
 
@@ -51,7 +51,7 @@ function HeroComponent() {
 
             </div>) :
 
-            ("lodaing....")
+            (null)
     )
 }
 
