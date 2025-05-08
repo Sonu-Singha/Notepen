@@ -29,7 +29,7 @@ function HeroComponent() {
     useEffect(() => {
         async function getAllPosts() {
             try {
-                const res = await axios.get(`${BackendURL}api/all-posts`);
+                const res = await axios.get(`${BackendURL}api/all-posts`, { withCredentials: true});
                 setPosts(res.data);
                 // console.log(posts)
             } catch (error) {

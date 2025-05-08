@@ -11,11 +11,11 @@ import post from "../models/markdown.model.js";
 async function allPostController(req, res) {
 
     try {
-        const allPost = await post.find();
+        const allPost = await post.find({ author_id: req.user._id });
         res.status(200).send(allPost)
 
     } catch (error) {
-        res.status(500).send("got error in backend allPostController", error);
+        res.status(500).send("got error in backend allPostController" + error);
     }
 }
 

@@ -3,6 +3,7 @@
 import express from 'express';
 import allPostController from '../controllers/allpost.controller.js';
 const router = express.Router();
+import isLogged from '../middlewares/isLogged.middleware.js';
 
 
 
@@ -11,7 +12,7 @@ const router = express.Router();
 // Setting Route
 //get routes
 
-router.get("/all-posts", allPostController);
+router.get("/all-posts", isLogged, allPostController);
 
 
 
