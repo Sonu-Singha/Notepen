@@ -26,22 +26,33 @@
     /* border: 1px solid white; */
     width: 95%;
     max-width: 1250px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    /* grid-auto-rows: 300px; */
-    gap: 1.5rem;
+    column-count: 3;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
     padding: 1rem;
-    grid-auto-flow: dense; 
+    /* grid-auto-flow: dense;  */
     align-items: start;
     
 }
+
+@media (max-width: 900px) {
+    .cards_container {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .cards_container {
+      column-count: 1;
+    }
+  }
 
 
 
 /* Card Wrapper */
 
 .Card_Wrapper {
-    /* border: 1px solid blue; */
+    margin-bottom: 1.5rem;
     background-color: black;
     border-radius: 7px;
     /* border: 1.5px solid rgba(83, 83, 83, 0.895); */
