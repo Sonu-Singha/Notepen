@@ -5,6 +5,9 @@
 import { useNavigate } from "react-router-dom"
 import "./Nav.component.css"
 
+import { useEffect } from "react";
+import axios from "axios";
+
 
 
 
@@ -84,9 +87,23 @@ function CreateButtonComponent() {
 
 // Logout Component
 function LogoutComponent() {
+    const Backend_URL = import.meta.env.VITE_BACKEND_URL;
+
+    async function logoutHandler() {
+        try {
+            const res = await axios.get(`${Backend_URL}api/logout`, {withCredentials:true})
+            if(res.status===200){
+                window.location.href="/login"
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return (
         <div className="Logout_Component">
-            <img className="logout_button" src="/src/assets/icons/logout.icon.svg" alt="logout" />
+            <img className="logout_button" src="/src/assets/icons/logout.icon.svg" alt="logout" onClick={logoutHandler} />
         </div>
 
     )
