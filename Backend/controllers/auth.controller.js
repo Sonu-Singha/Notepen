@@ -29,10 +29,10 @@ function handleGoogleLogin(req, res) {
         });
 
         // Redirect to frontend dashboard
-        res.redirect(process.env.FRONTEND_URL + '/create');
+        res.redirect(process.env.FRONTEND_URL + '/myposts');
     } catch (error) {
         console.log('Error in Google callback:', error);
-        res.redirect(process.env.FRONTEND_URL + '/login?error=auth_failed');
+        res.redirect(process.env.FRONTEND_URL + '/login');
     }
 }
 
