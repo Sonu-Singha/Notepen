@@ -13,6 +13,10 @@ const BackendURL = import.meta.env.VITE_BACKEND_URL;
 
 
 
+// Importing Loading screen
+
+import LoadingScreen from "/src/components/subComponents/loading.screens/Loading.jsx"
+
 
 
 // Creating component
@@ -38,7 +42,7 @@ function Authcheckpoint({ children }) {
         checkAuth();
     }, [])
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <LoadingScreen/>;
     return (
         isLogged ? children : <Navigate to="/login" />
     )

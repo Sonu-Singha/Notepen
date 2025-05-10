@@ -19,6 +19,11 @@ const BackendImgPath = "http://localhost:3000/public/uploads/";
 
 
 
+// Importing Loading screen
+
+import LoadingScreen from "/src/components/subComponents/loading.screens/Loading.jsx"
+
+
 // Creating Component
 // Main Component(MAIN)------------------------------------------------1
 
@@ -29,7 +34,7 @@ function HeroComponent() {
     useEffect(() => {
         async function getAllPosts() {
             try {
-                const res = await axios.get(`${BackendURL}api/all-posts`, { withCredentials: true});
+                const res = await axios.get(`${BackendURL}api/all-posts`, { withCredentials: true });
                 setPosts(res.data);
                 // console.log(posts)
             } catch (error) {
@@ -43,12 +48,16 @@ function HeroComponent() {
     return (
         <div className="APM_Con_Wrapper">
             <div className="cards_container">
-                {posts ? (
-                    posts.map((post, Key) => (
-                        <Postcard key={Key} data={post} />
-                    ))
+                {posts === null ? (
+                    <LoadingScreen />
+                ) : posts.length === 0 ? (
+                    <div style={{ display: "flex", justifyContent: "center", height: "100vh", width: "100%" }}>
+                        <span style={{ color: "rgb(169, 169, 169)", marginTop: "100px", fontFamily: "Arial, Helvetica, sans-serif", letterSpacing: "2px" }}>No posts found</span>
+                    </div>
                 ) : (
-                    "loading..."
+                    posts.map((post, key) => (
+                        <Postcard key={key} data={post} />
+                    ))
                 )}
             </div>
         </div>
