@@ -10,10 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Createpage from './components/pages/createpage/Createpage.component';
 
 // Loginpage
-import Loginpage from "./components/pages/loginpage/LoginPage.jsx";
-
-// Registerpage
-import Registerpage from './components/pages/registerpage/RegisterPage.jsx';
+import LoginPage from "./components/pages/googleAuthpage/loginpage.jsx";
 
 // Viewpage
 import Viewpage from './components/pages/viewpage/Viewpage.jsx';
@@ -37,15 +34,14 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Loginpage />} />
-        <Route path='/login' element={<Loginpage />} />
-        <Route path='/register' element={<Registerpage />} />
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/login' element={<LoginPage />} />
 
 
         <Route path='/view/:id' element={<Viewpage />} />
 
         {/* routes with auth checking */}
-        <Route path='/create' element={ <Createpage />} />
+        <Route path='/create' element={ <Authcheckpoint> <Createpage /> </Authcheckpoint>} />
         <Route path='/myposts' element={<Authcheckpoint> <Allpostpgae /> </Authcheckpoint>} />
 
       </Routes>

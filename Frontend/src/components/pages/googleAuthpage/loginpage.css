@@ -1,0 +1,152 @@
+/* Code starts from Here */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Main Login Component */
+
+.Login_Main_Component {
+    /* border: 1px solid blue; */
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Main Login Wrapper */
+
+.Main_Login_Wrapper {
+    /* border: 1px solid red; */
+    width: 100%;
+    max-width: 1250px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Login Container */
+
+.Login_Container {
+    border: 2px solid rgba(153, 205, 50, 0.689);
+    border-radius: 15px;
+    background-color: black;
+    width: 40%;
+    /* height: 70%; */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+
+/* Title */
+
+.login_t {
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_text {
+    color: rgb(153, 205, 50);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+
+/* Login Button */
+
+.login_button_container {
+    /* border: 1px solid purple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.google_login_button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(37, 37, 37);
+    color: rgb(199, 199, 199);
+    padding: 0.8rem 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: ease-in .15s;
+}
+
+.google_login_button:hover {
+    background-color: rgb(27, 27, 27);
+}
+
+.google_icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* Terms and Privacy */
+
+.terms_container {
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.terms_text {
+    color: rgb(134, 134, 134);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.terms_links {
+    /* border: 1px solid red; */
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.terms_link {
+    color: rgb(153, 205, 50);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: ease-in .15s;
+}
+
+.terms_link:hover {
+    color: rgb(172, 230, 56);
+}
+
+.terms_separator {
+    color: rgb(134, 134, 134);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+}

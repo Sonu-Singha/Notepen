@@ -24,7 +24,7 @@ passport.use(
             callbackURL: "http://localhost:3000/api/google/callback",
             scope: ["profile", "email"]
         },
-        async (_, _, profile, done) => {
+        async (_, __, profile, done) => {
             try {
                 // Check if user exists
                 let newUser = await userRegisterModel.findOne({ email: profile.emails[0].value });

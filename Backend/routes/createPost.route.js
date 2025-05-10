@@ -19,7 +19,7 @@ import isLogged from "../middlewares/isLogged.middleware.js";
 
 // post requests
 
-router.post("/create-post", upload.single('banner'), postController);
+router.post("/create-post", isLogged, upload.single('banner'), postController);
 
 
 
