@@ -45,7 +45,7 @@ function App() {
         <Route path='/view/:id' element={<Viewpage />} />
 
         {/* routes with auth checking */}
-        <Route path='/create' element={<Authcheckpoint> <Createpage /> </Authcheckpoint>} />
+        <Route path='/create' element={ <Createpage />} />
         <Route path='/myposts' element={<Authcheckpoint> <Allpostpgae /> </Authcheckpoint>} />
 
       </Routes>

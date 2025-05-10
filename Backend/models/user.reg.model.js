@@ -20,11 +20,16 @@ const useRegisterSchema = mongoose.Schema({
         unique: true,
         required: true
     },
-    password: {
+    googleId: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+    },
+    isVerified: {
+        type: Boolean,
+        default: true
     }
-}, { timeStamps: true })
+}, { timestamps: true })
 
 const user = mongoose.model("user", useRegisterSchema)
 

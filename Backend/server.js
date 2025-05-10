@@ -43,12 +43,15 @@ app.use("/public", express.static("public"))// will use the Backend server url f
 
 // Importing routes modules
 
-// user register route
-import userRegisterRoute from "./routes/user.reg.route.js";
+// // user register route
+// import userRegisterRoute from "./routes/user.reg.route.js";
 
-// user login route
+// // user login route
 
-import userLoingRoute from "./routes/user.login.route.js";
+// import userLoingRoute from "./routes/user.login.route.js";
+
+// google loging route
+import googleLogin from "./routes/auth.routes.js";
 
 // create-post route
 import createPost from "./routes/createPost.route.js";
@@ -93,14 +96,20 @@ app.use("/api", authCheck);
 
 // Post routes
 
-// user register
-app.use("/api", userRegisterRoute);
+// // user register
+// app.use("/api", userRegisterRoute);
 
-// user login
-app.use("/api", userLoingRoute);
+// // user login
+// app.use("/api", userLoingRoute);
 
 // create-post
 app.use("/api", createPost);
+
+app.use("/api", googleLogin);
+app.use((req, res, next) => {
+    console.log(`Request URL: ${req.method} ${req.url}`);
+    next();
+  });
 
 
 
