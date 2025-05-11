@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 // Backend URL
 const BackendURL = import.meta.env.VITE_BACKEND_URL;
-const BackendImgPath = "http://localhost:3000/public/uploads/";
+const BackendImgPath = `${BackendURL}public/uploads/`;
 
 
 
@@ -35,7 +35,7 @@ function HeroComponent() {
         async function getAllPosts() {
             try {
                 const res = await axios.get(`${BackendURL}api/all-posts`, { withCredentials: true });
-                setPosts(res.data);
+                setPosts([...res.data].reverse());
                 // console.log(posts)
             } catch (error) {
                 console.log("got error while getting all posts in Frontend" + error);
@@ -119,7 +119,9 @@ function Postbanner({ data, onDelete }) {
 
     return (
 
-        <div className="PostBanner_Wrapper" style={{ backgroundImage: `url(${BackendImgPath}${data.banner})` }}>
+        <div className="PostBanner_Wrapper" style={{
+            backgroundImage: `url(${BackendImgPath}${encodeURIComponent(data.banner)})`
+        }}>
             <div className="post_banner_button_wrapper">
                 <span className="delete_button" onClick={handleDelete}>
                     <img className="delete_icon" src={`src/assets/icons/remove.png`} alt="delete" />

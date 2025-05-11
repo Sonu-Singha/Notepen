@@ -47,9 +47,7 @@ function HeroComponent() {
         try {
             const res = await axios.post(`${BackendURL}api/create-post`, formdata,
                 { withCredentials: true })
-
-            alert(res.data)
-            console.log(res.data)
+            window.location.href = "myposts"
         }
         catch (error) {
             alert("got an error in titleHandler: " + error);
@@ -86,6 +84,14 @@ function BannerComponent({ banner, setBanner }) {
 
     function bannerHanlder(event) {
         const File = event.target.files[0];
+
+        
+        // Check file size (300KB = 300 * 1024 bytes)
+        if (File && File.size > 300 * 1024) {
+            alert("File is too large. Please select an image under 300KB");
+            event.target.value = ''; // Reset input
+            return;
+        }
 
         //setting image url to Banner if there is file!
         if (File) {
@@ -187,7 +193,9 @@ function ContentComponent({ content, setContent }) {
 function SubmitComponent() {
     return (
         <div className="post_content_cont">
-            <button className="draft_post">Make Draft</button>
+            <button type="button" className="draft_post" onClick={() => {
+                alert("Draft post feature is not available yet");
+            }}>Make Draft</button>
             <button type="submit" className="publish_post">Publish</button>
         </div>
     )

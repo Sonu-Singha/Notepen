@@ -44,6 +44,7 @@
 /* Theme Toggle component ----------------------------------------2*/
 .Main_Theme_Toggle {
     /* border: 1px solid yellow; */
+    visibility:hidden;
     width: 20%;
     display: flex;
     gap: .7rem;

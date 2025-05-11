@@ -36,7 +36,7 @@ function InfoSection() {
                     Site Details
                 </span>
                 <span className="box1_info">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium labore dolores cum. Deleniti iusto provident laboriosam reprehenderit sunt ullam officiis vitae commodi, libero cumque exercitationem velit quis ipsum rerum nesciunt necessitatibus, voluptate eius tempora fuga minus at consequuntur quidem delectus cum. Nam dolorem, non autem eligendi voluptatibus inventore voluptate accusantium.
+                    Welcome to Notepen, your modern platform for creating and sharing text content. Our intuitive editor combines simplicity with powerful features, making it perfect for writers, developers, and content creators. With secure Google authentication, real-time preview, and a clean interface, you can focus on what matters most - your content. Whether you're drafting documentation, writing blog posts, or taking notes, Notepen provides the tools you need in an elegant, distraction-free environment.
                 </span>
             </div>
 
