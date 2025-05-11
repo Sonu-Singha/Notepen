@@ -61,6 +61,9 @@ import authCheck from "./routes/auth.checkpoing.route.js";
 // logout route
 import logout from "./routes/logout.route.js";
 
+// delete-post route
+import deletePost from "./routes/deletepost.route.js";
+
 
 
 
@@ -101,6 +104,16 @@ app.use("/api", googleLogin);
 
 // logout
 app.use("/api", logout);
+
+
+
+
+
+
+// Delete routes
+
+// delete-post
+app.use("/api", deletePost);
 
 
 

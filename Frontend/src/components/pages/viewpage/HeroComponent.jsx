@@ -10,6 +10,15 @@ import { format } from "date-fns";
 import { useParams } from "react-router-dom";
 
 
+
+// Importing Loading screen
+
+import LoadingScreen from "/src/components/subComponents/loading.screens/Loading.jsx"
+
+
+
+
+
 // Backend URL
 const BackendURL = import.meta.env.VITE_BACKEND_URL
 const BackendImgPath = "http://localhost:3000/public/uploads/"
@@ -50,8 +59,8 @@ function HeroComponent() {
                 <ContentComponent post={currentPost} />
 
             </div>) :
-
-            (null)
+            
+            <LoadingScreen />
     )
 }
 
