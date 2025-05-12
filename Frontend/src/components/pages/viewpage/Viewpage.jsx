@@ -12,6 +12,8 @@ import SignupNavbar from "../../subComponents/signup.navbar/signup.nav.jsx";
 import Footer from '../../subComponents/footer/Footer.component.jsx';
 // Hero Component
 import HeroComponent from "./HeroComponent.jsx";
+// Loading Component
+import LoadingScreen from "../../subComponents/loading.screens/Loading.jsx";
 
 
 
@@ -26,37 +28,43 @@ const BackendURL = import.meta.env.VITE_BACKEND_URL;
 // Creating Component
 
 function Viewpage() {
+    const [loading, setLoading] = useState(true);
     const [isLogged, setIsLogged] = useState(null);
 
     useEffect(() => {
         async function checkAuth() {
-            const res = await axios.get(`${BackendURL}api/auth/isLogged/status`, { withCredentials: true });
-            if (res.data) {
+            try {
+                const res = await axios.get(`${BackendURL}api/auth/isLogged/status`, { withCredentials: true });
                 setIsLogged(true);
-            } else {
+            } catch (error) {
+                console.error("Auth check failed", error);
                 setIsLogged(false);
+            } finally {
+                setLoading(false);
             }
         }
         checkAuth();
     }, [])
 
+    // if loading is true, show loading screen
+    if (loading) {
+        return <LoadingScreen />
+    }
+
     return (
-        <>
-            {isLogged && (
-                <>
-                    <Navbar />
-                    <HeroComponent />
-                    <Footer />
-                </>
-            )}
-            {!isLogged && (
-                <>
-                    <SignupNavbar />
-                    <HeroComponent />
-                    <Footer />
-                </>
-            )}
-        </>
+        isLogged ? (
+            <>
+                <Navbar />
+                <HeroComponent />
+                <Footer />
+            </>
+        ) : (
+            <>
+                <SignupNavbar />
+                <HeroComponent />
+                <Footer />
+            </>
+        )
     )
 }
 
