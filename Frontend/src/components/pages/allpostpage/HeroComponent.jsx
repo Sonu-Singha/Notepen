@@ -23,7 +23,6 @@ const BackendImgPath = `${BackendURL}public/uploads/`;
 
 import LoadingScreen from "/src/components/subComponents/loading.screens/Loading.jsx"
 
-
 // Creating Component
 // Main Component(MAIN)------------------------------------------------1
 
