@@ -6,7 +6,7 @@ import Navbar from "../../subComponents/navbar/Nav.component.jsx";
 // Footer
 import Footer from '../../subComponents/footer/Footer.component.jsx';
 // Hero Component
-import HeroComponent from "../allpostpage/HeroComponent.jsx";
+import HeroComponent from "./HeroComponent.jsx";
 
 
 
@@ -15,7 +15,7 @@ import HeroComponent from "../allpostpage/HeroComponent.jsx";
 
 // Creating Component
 
-function Allpostpgae() {
+function Allpostpage() {
     return (
         <>
             <Navbar />
@@ -28,4 +28,4 @@ function Allpostpgae() {
 
 
 
-export default Allpostpgae;
+export default Allpostpage;

@@ -15,14 +15,14 @@ import LoginPage from "./components/pages/googleAuthpage/Loginpage.jsx";
 // Viewpage
 import Viewpage from './components/pages/viewpage/Viewpage.jsx';
 
-// Allpostpgae
-import Allpostpgae from './components/pages/allpostpage/Allpostpgae.jsx';
-
-// Outline
-import Outline from './components/subComponents/outline/Outiline.jsx';
+// Allpostpage
+import Allpostpage from './components/pages/allpostpage/Allpostpage.jsx';
 
 // auth check-point
 import Authcheckpoint from "./components/subComponents/auth.checkpoint/auth.checkpoint.jsx";
+
+// Hero
+import HeroComponent from './components/pages/createpage/Hero.component.jsx';
 
 
 
@@ -42,7 +42,7 @@ function App() {
 
         {/* routes with auth checking */}
         <Route path='/create' element={ <Authcheckpoint> <Createpage /> </Authcheckpoint>} />
-        <Route path='/myposts' element={<Authcheckpoint> <Allpostpgae /> </Authcheckpoint>} />
+        <Route path='/myposts' element={<Authcheckpoint> <Allpostpage /> </Authcheckpoint>} />
 
       </Routes>
     </BrowserRouter >
