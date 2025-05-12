@@ -4,29 +4,19 @@ import mongoose from "mongoose"
 import { config } from "dotenv";
 config();
 
-
-
-
-
-
-async function dbConnection(req, res) {
+async function dbConnection() {
     try {
         // Wait for mongoose to connect
         await mongoose.connect(process.env.DB_URI, {
             dbName: process.env.DB_NAME,
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             ssl: true,
         });
 
-        res.status(200).send("Database connected successfully!");
+        console.log("Database connected successfully!");
     } catch (error) {
-
-        // Send an error response
-        res.status(500).send("Internal server error");
+        console.error("Database connection error:", error);
+        throw error; // Re-throw the error to be handled by the caller
     }
 }
-
-
 
 export default dbConnection;
