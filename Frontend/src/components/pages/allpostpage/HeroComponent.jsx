@@ -102,6 +102,9 @@ function Postcard({ data, onDelete }) {
 
 function Postbanner({ data, onDelete }) {
 
+    // hardcoded copy text
+    const [copyT, setCopyT] = useState("Copy");
+
     async function handleDelete(event) {
         event.stopPropagation();
         await onDelete(data._id)
@@ -110,8 +113,12 @@ function Postbanner({ data, onDelete }) {
     async function handleCopy(event) {
         const postUrl = `${window.location.origin}/view/${data._id}`;
         try {
+            setCopyT("Copied");
             event.stopPropagation();
             await navigator.clipboard.writeText(postUrl);
+            setTimeout(() => {
+                setCopyT("Copy");
+            }, 500);
         } catch (error) {
             console.log("Failed to copy: ", error);
         }
@@ -127,7 +134,7 @@ function Postbanner({ data, onDelete }) {
                     <img className="delete_icon" src={`src/assets/icons/remove.png`} alt="delete" />
                 </span>
                 <span className="copy_link_button" onClick={handleCopy}>
-                    <img className="copy_icon" src={`src/assets/icons/copy.png`} alt="copy" />
+                    <div className="copy_text" >{copyT}</div>
                 </span>
             </div>
         </div>
