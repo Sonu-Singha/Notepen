@@ -21,7 +21,6 @@ import LoadingScreen from "/src/components/subComponents/loading.screens/Loading
 
 // Backend URL
 const BackendURL = import.meta.env.VITE_BACKEND_URL
-const BackendImgPath = "http://localhost:3000/public/uploads/"
 
 
 
@@ -59,7 +58,7 @@ function HeroComponent() {
                 <ContentComponent post={currentPost} />
 
             </div>) :
-            
+
             <LoadingScreen />
     )
 }
@@ -77,7 +76,7 @@ function BannerComponent({ post }) {
         <div className="Banner_Component">
             <div className="Banner_Container">
                 <img
-                    src={BackendImgPath + post.banner}
+                    src={post.banner}
                     alt="Banner"
                     className="Banner_Image"
                 />

@@ -120,7 +120,7 @@ function Postbanner({ data, onDelete }) {
     return (
 
         <div className="PostBanner_Wrapper" style={{
-            backgroundImage: `url(${BackendImgPath}${encodeURIComponent(data.banner)})`
+            backgroundImage: `url(${data.banner})`
         }}>
             <div className="post_banner_button_wrapper">
                 <span className="delete_button" onClick={handleDelete}>
