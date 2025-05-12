@@ -151,6 +151,9 @@ function Postbanner({ data, onDelete }) {
 function Posttitle({ data, onDelete }) {
     const date = new Date(data.createdAt);
     const createdAt = format(date, "d MMMM yyyy")
+    
+    // hardcoded copy text
+    const [copyT, setCopyT] = useState("Copy");
 
     // delete, copy handlers
 
@@ -162,8 +165,12 @@ function Posttitle({ data, onDelete }) {
     async function handleCopy(event) {
         const postUrl = `${window.location.origin}/view/${data._id}`;
         try {
+            setCopyT("Copied");
             event.stopPropagation();
             await navigator.clipboard.writeText(postUrl);
+            setTimeout(() => {
+                setCopyT("Copy");
+            }, 500);
         } catch (error) {
             console.log("Failed to copy: ", error);
         }
@@ -179,8 +186,8 @@ function Posttitle({ data, onDelete }) {
                         <span className="delete_button" onClick={handleDelete}>
                             <img className="delete_icon" src={`src/assets/icons/remove.png`} alt="delete" />
                         </span>
-                        <span className="copy_link_button" onClick={handleCopy} >
-                            <img className="copy_icon" src={`src/assets/icons/copy.png`} alt="copy" />
+                        <span className="copy_link_button" onClick={handleCopy}>
+                            <div className="copy_text">{copyT}</div>
                         </span>
                     </div>
                 )
