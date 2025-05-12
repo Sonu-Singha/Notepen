@@ -19,7 +19,7 @@ function handleGoogleLogin(req, res) {
             },
             process.env.JWT_SECRET
         );
-        console.log(jwtToken)
+        // console.log(jwtToken)
 
         // Set cookie
         res.cookie('userToken', jwtToken, {

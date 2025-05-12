@@ -7,6 +7,13 @@ import postModel from "../models/markdown.model.js";
 import user from "../models/user.reg.model.js";
 
 
+// Importing cloudinary & necessary packages
+
+import { v2 as cloudinary } from "cloudinary";
+import fs from "fs";
+import cloudinaryConfig from "../config/cloudinary.config.js";
+
+
 
 
 
@@ -17,11 +24,38 @@ async function postController(req, res) {
 
     const bannerFile = req.file;
 
-    //getting the banner filename
-    const bannerURL = bannerFile ? bannerFile.filename : null;
-
-
     try {
+
+        let bannerURL = null;
+
+        // getting the file path for cloudinary
+
+        if (bannerFile) {
+            // getting the file path
+            const filePath = req.file.path
+
+            // uploading the file to cloudinary
+            const uploadResult = await cloudinary.uploader.upload(filePath, {
+                folder: "uploads",
+                public_id: `banner${Date.now()}`
+            }).catch((error) => {
+                console.log( error);
+            });
+
+            // if not uploadResult then return error
+
+            if (!uploadResult) {
+                return res.status(500).send("failed to upload banner");
+            }
+
+            // deleting the file from loalDisk
+            fs.unlinkSync(filePath);
+
+            // storing the cloudinary url in bannerURL
+            bannerURL = uploadResult.secure_url;
+        }
+
+        // creating new post
         const newPost = await postModel.create({
             banner: bannerURL,
             post_title,
