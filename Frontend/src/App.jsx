@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Createpage from './components/pages/createpage/Createpage.component';
 
 // Loginpage
-import LoginPage from "./components/pages/googleAuthpage/loginpage.jsx";
+import LoginPage from "./components/pages/googleAuthpage/Loginpage.jsx";
 
 // Viewpage
 import Viewpage from './components/pages/viewpage/Viewpage.jsx';

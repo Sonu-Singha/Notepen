@@ -11,8 +11,6 @@ config();
 async function dbConnection(req, res) {
     try {
         mongoose.connect(process.env.DB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
             dbName: process.env.DB_NAME
         });
     } catch (error) {
