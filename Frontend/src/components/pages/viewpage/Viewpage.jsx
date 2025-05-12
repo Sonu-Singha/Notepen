@@ -6,6 +6,8 @@ import axios from "axios";
 
 // Navbar
 import Navbar from "../../subComponents/navbar/Nav.component.jsx";
+// Signup Navbar
+import SignupNavbar from "../../subComponents/signup.navbar/signup.nav.jsx";
 // Footer
 import Footer from '../../subComponents/footer/Footer.component.jsx';
 // Hero Component
@@ -49,6 +51,7 @@ function Viewpage() {
             )}
             {!isLogged && (
                 <>
+                    <SignupNavbar />
                     <HeroComponent />
                     <Footer />
                 </>

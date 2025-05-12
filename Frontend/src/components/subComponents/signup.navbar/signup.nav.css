@@ -1,0 +1,144 @@
+/* Code starts from Here */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Signup Navbar Wrapper */
+
+.Signup_Navbar_Wrapper {
+    /* border: 1px solid red; */
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Main component ----------------------------------------1*/
+.Main_Signup_Navbar_Component {
+    /* border: 1px solid yellow; */
+    background-color: rgb(21, 21, 21);
+    width: 100%;
+    max-width: 1250px;
+    height: 3.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Brand Text Component ----------------------------------------2*/
+.Brand_Text_Container {
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+}
+
+.Brand_Text {
+    /* border: 1px solid red; */
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Created_Text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: .9rem;
+    letter-spacing: 2px;
+}
+
+.Logo_Text {
+    background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Login Nav component ----------------------------------------3*/
+.Main_Signup_Nav_Buttons {
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Signup_Text_Container {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.Signup_Free_Text {
+    /* border: 1px solid red; */
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.799);
+    font-size: .95rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Login Button Component ----------------------------------------4*/
+.Login_Button_Component {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.Login_Text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 180, 0, 0.395);
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.Login_Text:hover {
+    background-color: rgb(25, 155, 0);
+}
