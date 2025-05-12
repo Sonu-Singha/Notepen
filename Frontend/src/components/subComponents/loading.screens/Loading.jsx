@@ -10,10 +10,10 @@ import "./loading.css"
 // Creating Component
 // Main Component(LOADING)-----------------------------------------------1
 
-function LoadingScreen() {
+function LoadingScreen({ message = "Loading" }) {
     return (
         <div className="Loading_Main_Component">
-            <LoaderComponent />
+            <LoaderComponent message={message} />
         </div>
     )
 }
@@ -23,15 +23,15 @@ function LoadingScreen() {
 
 // Sub Component(LOADER)-----------------------------------------------2
 
-function LoaderComponent() {
+function LoaderComponent({ message }) {
     return (
         <div className="Loader_Container">
-            <img 
-                src="/src/assets/icons/loader.gif" 
-                alt="Loading..." 
+            <img
+                src="/src/assets/icons/loader.gif"
+                alt="Loading..."
                 className="loader_gif"
             />
-            <span className="loading_text">Loading</span>
+            <span className="loading_text">{message}</span>
         </div>
     )
 }

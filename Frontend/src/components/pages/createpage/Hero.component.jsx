@@ -12,11 +12,18 @@ import axios from "axios";
 const BackendURL = import.meta.env.VITE_BACKEND_URL;
 
 
+// Importing Loading Screen
+import LoadingScreen from "../../subComponents/loading.screens/Loading.jsx";
+
+
 // Creating Components
 
 // Main component(HEAD)-------------------------------------------1
 
 function HeroComponent() {
+
+    // Loading
+    const [loading, setLoading] = useState(false);
 
     // Banner
     const [banner, setBanner] = useState(null);
@@ -43,6 +50,7 @@ function HeroComponent() {
 
     const submitHandler = async (event) => {
         event.preventDefault();
+        setLoading(true)
 
         try {
             const res = await axios.post(`${BackendURL}api/create-post`, formdata,
@@ -52,9 +60,15 @@ function HeroComponent() {
         catch (error) {
             alert("got an error in titleHandler: " + error);
             console.log("got an error in titleHandler: " + error);
-
+            setLoading(false);
         }
 
+    }
+
+    if (loading) {
+        return (
+            <LoadingScreen message="Creating Post" />
+        )
     }
 
 
@@ -85,7 +99,7 @@ function BannerComponent({ banner, setBanner }) {
     function bannerHanlder(event) {
         const File = event.target.files[0];
 
-        
+
         // Check file size (300KB = 300 * 1024 bytes)
         if (File && File.size > 300 * 1024) {
             alert("File is too large. Please select an image under 300KB");
@@ -116,7 +130,7 @@ function BannerComponent({ banner, setBanner }) {
                 ) : (
                     <label className="Banner_Input_Label" htmlFor="Banner_Input">
                         <span className="Banner_Input_Text">Add Banner Image</span>
-                        <span className="Banner_Ins">use wider image for banner</span>
+                        <span className="Banner_Ins">use wider image for banner & supports under 300KB only</span>
                     </label>
                 )}
 
