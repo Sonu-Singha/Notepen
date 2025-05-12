@@ -126,4 +126,4 @@ app.use("/api", deletePost);
 
 // server listening
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || 3000)

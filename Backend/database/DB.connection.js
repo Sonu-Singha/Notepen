@@ -8,14 +8,22 @@ config();
 
 
 
+
 async function dbConnection(req, res) {
     try {
-        mongoose.connect(process.env.DB_URI, {
-            dbName: process.env.DB_NAME
+        // Wait for mongoose to connect
+        await mongoose.connect(process.env.DB_URI, {
+            dbName: process.env.DB_NAME,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            ssl: true,
         });
+
+        res.status(200).send("Database connected successfully!");
     } catch (error) {
-        res.status(500).send("Internal server error")
-        console.log(error)
+
+        // Send an error response
+        res.status(500).send("Internal server error");
     }
 }
 
