@@ -21,7 +21,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: "https://notepen.onrender.com/api/google/callback",
+            callbackURL: process.env.BACKEND_URL + "/api/google/callback",
             scope: ["profile", "email"]
         },
         async (_, __, profile, done) => {

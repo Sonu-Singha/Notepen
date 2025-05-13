@@ -25,7 +25,7 @@ function Herocomponent() {
 
 function LoginBox() {
     const handleGoogleLogin = () => {
-        window.location.href = 'http://localhost:3000/api/google';
+        window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/google`;
     };
 
     return (
