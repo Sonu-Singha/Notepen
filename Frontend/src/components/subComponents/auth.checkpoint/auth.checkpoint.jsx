@@ -30,9 +30,21 @@ function Authcheckpoint({ children }) {
     useEffect(() => {
         async function checkAuth() {
             try {
-                const res = await axios.get(`${BackendURL}api/auth/isLogged/status`, { withCredentials: true });
+                const token = localStorage.getItem('userToken');
+                if (!token) {
+                    setIsLogged(false);
+                    return;
+                }
+                
+                const res = await axios.get(`${BackendURL}api/auth/isLogged/status`, {
+                    headers: {
+                        authorization: `Bearer ${token}`
+                    }
+                });
+                console.log("Response:", res.data);
                 setIsLogged(true);
             } catch (error) {
+                localStorage.removeItem('userToken'); // Clear invalid token
                 setIsLogged(false);
             } finally {
                 setLoading(false)

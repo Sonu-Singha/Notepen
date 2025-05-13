@@ -34,8 +34,9 @@ app.use(cookieParser({
     domain: '.vercel.app'
 }));
 app.use(cors({
-    origin: "https://notepen.vercel.app",
-    credentials: true
+    origin: "http://localhost:5173",
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use("/public", express.static("public"))// will use the Backend server url for serving static files
 

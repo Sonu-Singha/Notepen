@@ -17,26 +17,11 @@ function handleGoogleLogin(req, res) {
                 email: req.user.email,
                 googleId: req.user.googleId
             },
-            process.env.JWT_SECRET,
-            { expiresIn: '24h' }
+            process.env.JWT_SECRET
         );
-        // console.log(jwtToken)
 
-        // Get date for 24 hours from now
-        const expiryDate = new Date();
-        expiryDate.setHours(expiryDate.getHours() + 48);
-
-        // Set cookie
-        res.cookie('userToken', jwtToken, {
-            httpOnly: true,
-            secure: true,
-            sameSite: 'none',
-            expires: expiryDate,
-            path: '/'
-        });
-
-        // Redirect to frontend dashboard
-        res.redirect(process.env.FRONTEND_URL + '/myposts');
+        // Instead of setting a cookie, redirect with token in URL
+        res.redirect(`${process.env.FRONTEND_URL}/auth-callback?token=${jwtToken}`);
     } catch (error) {
         console.log('Error in Google callback:', error);
         res.redirect(process.env.FRONTEND_URL + '/login');
@@ -46,12 +31,6 @@ function handleGoogleLogin(req, res) {
 
 // Logout controller
 function handleLogout(req, res) {
-    res.clearCookie('userToken', {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: 72 * 60 * 60 * 1000
-    });
     res.status(200).send('Logged out successfully');
 }
 

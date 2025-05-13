@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from 'axios';
 
 
 
@@ -24,6 +25,9 @@ import Authcheckpoint from "./components/subComponents/auth.checkpoint/auth.chec
 // Hero
 import HeroComponent from './components/pages/createpage/Hero.component.jsx';
 
+// AuthCallback
+import AuthCallback from './components/pages/authCallback/AuthCallback.jsx';
+
 
 
 
@@ -44,10 +48,21 @@ function App() {
         <Route path='/create' element={ <Authcheckpoint> <Createpage /> </Authcheckpoint>} />
         <Route path='/myposts' element={<Authcheckpoint> <Allpostpage /> </Authcheckpoint>} />
 
+        <Route path='/auth-callback' element={<AuthCallback />} />
+
       </Routes>
     </BrowserRouter >
 
   )
 }
+
+// Add this to your main index.js or App.jsx
+axios.interceptors.request.use(config => {
+    const token = localStorage.getItem('userToken');
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
 
 export default App

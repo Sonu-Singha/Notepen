@@ -91,8 +91,9 @@ function LogoutComponent() {
 
     async function logoutHandler() {
         try {
-            const res = await axios.get(`${Backend_URL}api/logout`, {withCredentials:true})
+            const res = await axios.get(`${Backend_URL}api/logout`)
             if(res.status===200){
+                localStorage.removeItem("userToken")
                 window.location.href="/login"
             }
         } catch (error) {

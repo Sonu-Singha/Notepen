@@ -33,7 +33,12 @@ function HeroComponent() {
     useEffect(() => {
         async function getAllPosts() {
             try {
-                const res = await axios.get(`${BackendURL}api/all-posts`, { withCredentials: true });
+                const token = localStorage.getItem('userToken');
+                const res = await axios.get(`${BackendURL}api/all-posts`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
                 setPosts([...res.data].reverse());
                 // console.log(posts)
             } catch (error) {
