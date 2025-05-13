@@ -12,8 +12,13 @@ const router = express.Router();
 // Creating route
 
 router.get("/auth/isLogged/status", isLogged, (req, res) => {
-    res.status(200).send({ Logged: true })
-})
+    try {
+        res.status(200).json({ Logged: true });
+    } catch (error) {
+        console.error('Auth check error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 
 
