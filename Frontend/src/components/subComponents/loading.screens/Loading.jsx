@@ -27,7 +27,7 @@ function LoaderComponent({ message }) {
     return (
         <div className="Loader_Container">
             <img
-                src="/src/assets/icons/loader.gif"
+                src="/assets/icons/loader.gif"
                 alt="Loading..."
                 className="loader_gif"
             />
