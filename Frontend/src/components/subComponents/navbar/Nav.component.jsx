@@ -75,7 +75,7 @@ function CreateButtonComponent() {
 
     return (
         <div className="Create_Button_Component">
-            <img className="create_icon" src="/src/assets/icons/create.icon.svg" alt="create icon" onClick={clickHandler} />
+            <img className="create_icon" src="/assets/icons/create.icon.svg" alt="create icon" onClick={clickHandler} />
         </div>
     )
 
@@ -104,7 +104,7 @@ function LogoutComponent() {
 
     return (
         <div className="Logout_Component">
-            <img className="logout_button" src="/src/assets/icons/logout.icon.svg" alt="logout" onClick={logoutHandler} />
+            <img className="logout_button" src="/assets/icons/logout.icon.svg" alt="logout" onClick={logoutHandler} />
         </div>
 
     )

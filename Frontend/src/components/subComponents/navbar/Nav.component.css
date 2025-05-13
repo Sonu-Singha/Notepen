@@ -10,7 +10,7 @@
 
 /* Navbar Wrapper */
 
-.Navbar_Wrapper{
+.Navbar_Wrapper {
     /* border: 1px solid red; */
     background-color: rgb(21, 21, 21);
     display: flex;
@@ -44,7 +44,7 @@
 /* Theme Toggle component ----------------------------------------2*/
 .Main_Theme_Toggle {
     /* border: 1px solid yellow; */
-    visibility:hidden;
+    visibility: hidden;
     width: 20%;
     display: flex;
     gap: .7rem;
@@ -53,7 +53,7 @@
 
 .theme_logo {
     /* border: 1px solid red; */
-    background-image: url("/src//assets/icons/theme1.icon.png");
+    background-image: url("/assets/icons/theme1.icon.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -63,8 +63,8 @@
     /* transition: ease-out .2s; */
 }
 
-.theme_logo:hover{
-    background-image: url("/src//assets/icons/theme1.icon.png");
+.theme_logo:hover {
+    background-image: url("/assets/icons/theme1.icon.png");
     transform: scaleX(-1);
 }
 
