@@ -30,7 +30,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://notepen.vercel.app/login",
+    origin: "https://notepen.vercel.app",
     credentials: true
 }));
 app.use("/public", express.static("public"))// will use the Backend server url for serving static files
