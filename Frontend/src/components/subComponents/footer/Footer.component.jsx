@@ -55,11 +55,11 @@ function InfoSection() {
                 <div className="box2_profiles">
                     <span className="twitter">
                         <span className="twitter_text" onClick={XclickHandler}>Twitter</span>
-                        <img className="twitter_icon" src="src\assets\icons\twitter.icon.png" alt="" />
+                        <img className="twitter_icon" src="/assets/icons/twitter.icon.png" alt="" />
                     </span>
                     <span className="email">
                         <a href="mailto:deyk64032@gmail.com" className="email_text">Email</a>
-                        <img className="email_icon" src="src\assets\icons\email.icon.png" alt="" />
+                        <img className="email_icon" src="/assets/icons/email.icon.png" alt="" />
                     </span>
                 </div>
             </div>
