@@ -37,7 +37,7 @@ function LoginBox() {
                 <div className="login_button_container">
                     <button onClick={handleGoogleLogin} className="google_login_button">
                         <img 
-                            src="../src/assets/icons/google.png" 
+                            src="/assets/icons/google.png" 
                             alt="Google" 
                             className="google_icon"
                         />

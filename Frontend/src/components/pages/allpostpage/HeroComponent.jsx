@@ -135,7 +135,7 @@ function Postbanner({ data, onDelete }) {
         }}>
             <div className="post_banner_button_wrapper">
                 <span className="delete_button" onClick={handleDelete}>
-                    <img className="delete_icon" src={`src/assets/icons/remove.png`} alt="delete" />
+                    <img className="delete_icon" src={`/assets/icons/remove.png`} alt="delete" />
                 </span>
                 <span className="copy_link_button" onClick={handleCopy}>
                     <div className="copy_text" >{copyT}</div>
@@ -188,7 +188,7 @@ function Posttitle({ data, onDelete }) {
                 !data.banner && (
                     <div className="post_banner_button_wrapper">
                         <span className="delete_button" onClick={handleDelete}>
-                            <img className="delete_icon" src={`src/assets/icons/remove.png`} alt="delete" />
+                            <img className="delete_icon" src={`/assets/icons/remove.png`} alt="delete" />
                         </span>
                         <span className="copy_link_button" onClick={handleCopy}>
                             <div className="copy_text">{copyT}</div>
