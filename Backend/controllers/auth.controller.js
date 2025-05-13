@@ -17,15 +17,22 @@ function handleGoogleLogin(req, res) {
                 email: req.user.email,
                 googleId: req.user.googleId
             },
-            process.env.JWT_SECRET
+            process.env.JWT_SECRET,
+            { expiresIn: '24h' }
         );
         // console.log(jwtToken)
+
+        // Get date for 24 hours from now
+        const expiryDate = new Date();
+        expiryDate.setHours(expiryDate.getHours() + 48);
 
         // Set cookie
         res.cookie('userToken', jwtToken, {
             httpOnly: true,
             secure: true,
-            sameSite: 'none'
+            sameSite: 'none',
+            expires: expiryDate,
+            path: '/'
         });
 
         // Redirect to frontend dashboard
