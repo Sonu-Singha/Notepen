@@ -25,7 +25,8 @@ function handleGoogleLogin(req, res) {
         res.cookie('userToken', jwtToken, {
             httpOnly: true,
             secure: true,
-            sameSite: 'none'
+            sameSite: 'none',
+            domain: '.vercel.app'
         });
 
         // Redirect to frontend dashboard

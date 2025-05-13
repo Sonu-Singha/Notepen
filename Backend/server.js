@@ -28,7 +28,11 @@ dbConnection();
 
 const app = express();
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser({
+    secure: true,
+    sameSite: 'none',
+    domain: '.vercel.app'
+}));
 app.use(cors({
     origin: "https://notepen.vercel.app",
     credentials: true
