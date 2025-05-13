@@ -42,7 +42,8 @@ function handleLogout(req, res) {
     res.clearCookie('userToken', {
         httpOnly: true,
         secure: true,
-        sameSite: 'none'
+        sameSite: 'none',
+        maxAge: 72 * 60 * 60 * 1000
     });
     res.status(200).send('Logged out successfully');
 }
