@@ -38,7 +38,7 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LoginPage />} />
+        <Route path='/' element={<Authcheckpoint> <Allpostpage /> </Authcheckpoint>} />
         <Route path='/login' element={<LoginPage />} />
 
 
@@ -56,7 +56,7 @@ function App() {
   )
 }
 
-// Add this to your main index.js or App.jsx
+
 axios.interceptors.request.use(config => {
     const token = localStorage.getItem('userToken');
     if (token) {

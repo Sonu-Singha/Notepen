@@ -131,6 +131,8 @@
     color: rgb(78, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8rem;
+    text-align: center;
+    padding: 0 10px;
 }
 
 
@@ -229,6 +231,7 @@
 .ql-toolbar {
     display: flex !important;
     justify-content: center !important;
+    flex-wrap: wrap !important;
 }
 
 .QuillEditor .ql-toolbar {
@@ -238,6 +241,7 @@
     background-color: #000000;
     border: 3px solid black !important;
     outline: none;
+    padding: 8px 5px !important;
 }
 
 /* Change icon/button color */
@@ -250,22 +254,22 @@
 }
 
 .QuillEditor .ql-toolbar button:hover .ql-stroke,
-.QuillEditor .ql-toolbar button.ql-active .ql-stroke {
-    stroke: #00d1b2 !important;
+.QuillEditor .ql-toolbar .ql-picker-label:hover .ql-stroke {
+    stroke: #ffffff !important;
 }
 
-
-
-/* Post Content */
+.QuillEditor .ql-toolbar button:hover .ql-fill,
+.QuillEditor .ql-toolbar .ql-picker-label:hover .ql-fill {
+    stroke: #ffffff !important;
+}
 
 .post_content_cont {
     /* border: 1px solid red; */
     width: 85%;
-    max-width: 1250px;
     display: flex;
-    justify-content: end;
-    gap: .5rem;
-    padding: .5rem;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
 .publish_post {
@@ -294,5 +298,103 @@
 
 .draft_post:hover {
     cursor: pointer;
-    background-color: rgb(179, 98, 0);
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 950px) {
+    .QuillEditor {
+        width: 90%;
+    }
+    
+    .post_content_cont {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .title_input_container {
+        width: 85%;
+    }
+    
+    .Title_Input {
+        width: 90%;
+    }
+    
+    .Title_Input::placeholder {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .QuillEditor {
+        width: 95%;
+    }
+    
+    .post_content_cont {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .Banner_Display_Container {
+        width: 85%;
+        height: 30vh;
+    }
+    
+    .Banner_Img {
+        margin-left: 0;
+    }
+    
+    .Banner_Input_Label {
+        width: 85%;
+        height: 20vh;
+    }
+    
+    .Banner_Input_Text {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
+    }
+    
+    .Banner_Ins {
+        font-size: 0.7rem;
+    }
+    
+    .Title_Container {
+        height: 12vh;
+    }
+    
+    .title_input_container {
+        width: 90%;
+    }
+    
+    .Title_Input {
+        width: 95%;
+        font-size: 0.8rem;
+    }
+    
+    .QuillEditor {
+        width: 98%;
+    }
+    
+    .QuillEditor .ql-container {
+        height: 70vh;
+    }
+    
+    .ql-toolbar {
+        padding: 5px 2px !important;
+    }
+    
+    .ql-toolbar button {
+        padding: 2px !important;
+    }
+    
+    .post_content_cont {
+        width: 98%;
+        gap: 0.5rem;
+    }
+    
+    .publish_post, .draft_post {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }

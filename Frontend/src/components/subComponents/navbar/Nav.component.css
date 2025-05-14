@@ -193,3 +193,50 @@
 .logout_button:hover {
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Styles ----------------------------------------6*/
+@media screen and (max-width: 600px) {
+    .Main_Navbar_Component {
+        flex-direction: column;
+        height: auto;
+        padding: 0.5rem 0;
+    }
+    
+    .Main_Theme_Toggle {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .Main_Extra_Nav_Buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 2.5rem;
+        padding: 0.5rem 0;
+    }
+    
+    .Create_Button_Component,
+    .View_Button_Component,
+    .Logout_Component {
+        width: auto;
+    }
+    
+    .View_Text {
+        font-size: 1rem;
+    }
+    
+    .logout_button {
+        height: 60%;
+    }
+}

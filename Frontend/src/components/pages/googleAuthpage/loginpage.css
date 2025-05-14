@@ -67,6 +67,7 @@
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 
@@ -123,6 +124,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8rem;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .terms_links {
@@ -149,4 +151,45 @@
     color: rgb(134, 134, 134);
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8rem;
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 950px) {
+    .Login_Container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Login_Container {
+        width: 70%;
+    }
+    
+    .login_text {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Login_Container {
+        width: 85%;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .login_text {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+    
+    .google_login_button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .terms_text, .terms_link, .terms_separator {
+        font-size: 0.7rem;
+    }
 }
