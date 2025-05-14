@@ -34,7 +34,7 @@ app.use(cookieParser({
     domain: '.vercel.app'
 }));
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://notepen.vercel.app",
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
