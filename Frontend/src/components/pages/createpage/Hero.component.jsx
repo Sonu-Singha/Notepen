@@ -130,7 +130,7 @@ function BannerComponent({ banner, setBanner }) {
                 ) : (
                     <label className="Banner_Input_Label" htmlFor="Banner_Input">
                         <span className="Banner_Input_Text">Add Banner Image</span>
-                        <span className="Banner_Ins">use wider image for banner & supports under 300KB only</span>
+                        <span className="Banner_Ins">images only under 300KB</span>
                     </label>
                 )}
 
